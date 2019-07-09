@@ -1,9 +1,9 @@
-﻿using System.Collections.Generic;
-using System.Web.Mvc;
-using Luxybox.Models;
+﻿using System.Web.Mvc;
 using System.Linq;
+using System.Net;
+using Luxybox.Data;
 
-namespace Luxybox.Controllers
+namespace Luxybox.Controllers 
 {
     public class HomeController : BaseController
     {
@@ -14,6 +14,18 @@ namespace Luxybox.Controllers
             var categories = dbContext.Categories.ToList();//Helper.BusinessHelper.GetCategories();
             return View(categories);
         }
-
+        public ActionResult Details(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Product product = dbContext.Products.Find(id);
+            if (product == null)
+            {
+                return HttpNotFound();
+            }
+            return View(product);
+        }
     }
 }

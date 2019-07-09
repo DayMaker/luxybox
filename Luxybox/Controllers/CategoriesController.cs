@@ -10,7 +10,7 @@ using Luxybox.Data;
 
 namespace Luxybox.Controllers
 {
-    [AuthorizationController]
+    
     public class CategoriesController : Controller
     {
         private LuxyBoxEntities db = new LuxyBoxEntities();

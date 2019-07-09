@@ -11,6 +11,7 @@
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="ImgUrl" Type="varchar" MaxLength="500" />
         </EntityType>
         <EntityType Name="Member">
           <Key>
@@ -45,6 +46,7 @@
           <Property Name="Name" Type="varchar" MaxLength="500" />
           <Property Name="CategoryId" Type="int" Nullable="false" />
           <Property Name="Price" Type="decimal" Precision="15" Scale="2" />
+          <Property Name="ImgUrl" Type="varchar" MaxLength="500" />
         </EntityType>
         <Association Name="FK_Order_Member">
           <End Role="Member" Type="Self.Member" Multiplicity="1" />
@@ -128,6 +130,7 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Products" Relationship="Self.FK_Product_Category" FromRole="Category" ToRole="Product" />
+          <Property Name="ImgUrl" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Product">
           <Key>
@@ -139,6 +142,7 @@
           <NavigationProperty Name="Category" Relationship="Self.FK_Product_Category" FromRole="Product" ToRole="Category" />
           <NavigationProperty Name="OrderItems" Relationship="LuxbyBoxModel.FK_OrderItem_Product" FromRole="Product" ToRole="OrderItem" />
           <Property Name="Price" Type="Decimal" Precision="15" Scale="2" />
+          <Property Name="ImgUrl" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
         </EntityType>
         <Association Name="FK_Product_Category">
           <End Role="Category" Type="Self.Category" Multiplicity="1" />
@@ -250,6 +254,7 @@
           <EntitySetMapping Name="Categories">
             <EntityTypeMapping TypeName="LuxbyBoxModel.Category">
               <MappingFragment StoreEntitySet="Category">
+                <ScalarProperty Name="ImgUrl" ColumnName="ImgUrl" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
               </MappingFragment>
@@ -258,6 +263,7 @@
           <EntitySetMapping Name="Products">
             <EntityTypeMapping TypeName="LuxbyBoxModel.Product">
               <MappingFragment StoreEntitySet="Product">
+                <ScalarProperty Name="ImgUrl" ColumnName="ImgUrl" />
                 <ScalarProperty Name="Price" ColumnName="Price" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
