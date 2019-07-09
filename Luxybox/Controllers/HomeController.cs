@@ -12,7 +12,10 @@ namespace Luxybox.Controllers
         {
             //Helper.BusinessHelper.AddCategory(new Data.Category { Name = "Men" });
             var categories = dbContext.Categories.ToList();//Helper.BusinessHelper.GetCategories();
-            return View(categories);
+            var products = dbContext.Products.ToList();
+            var model = new HomeModel(categories, products);
+
+            return View(model);
         }
         public ActionResult Details(int? id)
         {
