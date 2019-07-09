@@ -8,6 +8,12 @@
         <EntityTypeShape EntityType="LuxbyBoxModel.Category" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="LuxbyBoxModel.Product" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
         <AssociationConnector Association="LuxbyBoxModel.FK_Product_Category" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="LuxbyBoxModel.Member" Width="1.5" PointX="0.75" PointY="4" />
+        <EntityTypeShape EntityType="LuxbyBoxModel.Order" Width="1.5" PointX="3" PointY="3.875" />
+        <EntityTypeShape EntityType="LuxbyBoxModel.OrderItem" Width="1.5" PointX="5.25" PointY="0.875" />
+        <AssociationConnector Association="LuxbyBoxModel.FK_Order_Member" />
+        <AssociationConnector Association="LuxbyBoxModel.FK_OrderItem_Order" />
+        <AssociationConnector Association="LuxbyBoxModel.FK_OrderItem_Product" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
