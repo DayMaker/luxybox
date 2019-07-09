@@ -14,6 +14,7 @@
         <AssociationConnector Association="LuxbyBoxModel.FK_Order_Member" />
         <AssociationConnector Association="LuxbyBoxModel.FK_OrderItem_Order" />
         <AssociationConnector Association="LuxbyBoxModel.FK_OrderItem_Product" />
+        <EntityTypeShape EntityType="LuxbyBoxModel.sysdiagram" Width="1.5" PointX="5.375" PointY="3.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

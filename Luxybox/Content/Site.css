@@ -16,3 +16,45 @@ textarea {
     max-width: 280px;
 }
 
+
+.product {
+    background-color:yellow;
+}
+
+.product-row {
+    padding: 10px;
+    margin-left: 10px;
+    border: 1px solid gray;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 10px;
+    color: deeppink;
+    float: left;
+}
+.product-image {
+    width: 200px;
+    height: 150px;  
+}
+
+.categorys {
+    display: block;
+    position: relative;
+    overflow: hidden;
+}
+
+.category-row {
+     padding: 10px;
+    margin-left: 10px;
+    border: 1px solid gray;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 10px;
+    color: deeppink;
+    float: left;
+}
+
+.category-image {
+    width: 200px;
+    height: 150px;
+}
+    
