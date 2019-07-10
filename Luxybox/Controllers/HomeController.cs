@@ -32,4 +32,5 @@ namespace Luxybox.Controllers
             return View(product);
         }
     }
+
 }

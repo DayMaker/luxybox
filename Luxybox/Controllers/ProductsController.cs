@@ -15,14 +15,10 @@ namespace Luxybox.Controllers
         private LuxyBoxEntities db = new LuxyBoxEntities();
 
         // GET: Products
-        public ActionResult Index()
-        {
-            var products = db.Products.Include(p => p.Category);
-            return View(products.ToList());
-        }
+        
 
         // GET: Products/Details/5
-        public ActionResult Details(int? id)
+        public ActionResult Index(int? id)
         {
             if (id == null)
             {
@@ -35,6 +31,22 @@ namespace Luxybox.Controllers
             }
             return View(products);
         }
+
+        // GET: Products/Details/5
+        public ActionResult Products(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            var products = db.Products.Where(c => c.CategoryId == id).ToList();
+            if (products == null)
+            {
+                return HttpNotFound();
+            }
+            return View(products);
+        }
+
 
         // GET: Products/Create
         public ActionResult Create()
