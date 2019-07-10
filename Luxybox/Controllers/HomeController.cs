@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Net;
 using Luxybox.Data;
+using Luxybox.Models;
 
 namespace Luxybox.Controllers 
 {

@@ -28,12 +28,12 @@ namespace Luxybox.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Product product = db.Products.Find(id);
-            if (product == null)
+            var products = db.Products.Where(c=> c.CategoryId==id).ToList();
+            if (products == null)
             {
                 return HttpNotFound();
             }
-            return View(product);
+            return View(products);
         }
 
         // GET: Products/Create
