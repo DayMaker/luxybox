@@ -61,7 +61,9 @@ textarea {
     color:purple !important;
 }
 .lux-box{
-    height:auto;
+    
+    height:60px;
+    width:100px;
 }
 
 
