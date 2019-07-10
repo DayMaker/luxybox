@@ -15,25 +15,10 @@ namespace Luxybox.Controllers
         private LuxyBoxEntities db = new LuxyBoxEntities();
 
         // GET: Products
-        
+
 
         // GET: Products/Details/5
         public ActionResult Index(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            var products = db.Products.Where(c=> c.CategoryId==id).ToList();
-            if (products == null)
-            {
-                return HttpNotFound();
-            }
-            return View(products);
-        }
-
-        // GET: Products/Details/5
-        public ActionResult Products(int? id)
         {
             if (id == null)
             {
@@ -45,6 +30,21 @@ namespace Luxybox.Controllers
                 return HttpNotFound();
             }
             return View(products);
+        }
+
+        // GET: Products/Details/5
+        public ActionResult Details(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            var product = db.Products.Where(c => c.CategoryId == id).ToList();
+            if (product == null)
+            {
+                return HttpNotFound();
+            }
+            return View(product);
         }
 
 
@@ -66,11 +66,11 @@ namespace Luxybox.Controllers
             {
                 db.Products.Add(product);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index",new { id= product.CategoryId });
             }
 
             ViewBag.CategoryId = new SelectList(db.Categories, "Id", "Name", product.CategoryId);
-            return View(product);
+            return View();
         }
 
         // GET: Products/Edit/5
@@ -100,7 +100,7 @@ namespace Luxybox.Controllers
             {
                 db.Entry(product).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", new { id = product.CategoryId });
             }
             ViewBag.CategoryId = new SelectList(db.Categories, "Id", "Name", product.CategoryId);
             return View(product);
@@ -129,7 +129,7 @@ namespace Luxybox.Controllers
             Product product = db.Products.Find(id);
             db.Products.Remove(product);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", new { id = product.CategoryId });
         }
        
 
