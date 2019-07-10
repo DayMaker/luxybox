@@ -57,4 +57,12 @@ textarea {
     width: 200px;
     height: 150px;
 }
+.navbar-brand{
+    color:purple !important;
+}
+.lux-box{
+    height:auto;
+}
+
+
     
