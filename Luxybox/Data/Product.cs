@@ -25,6 +25,9 @@ namespace Luxybox.Data
         public int CategoryId { get; set; }
         public Nullable<decimal> Price { get; set; }
         public string ImgUrl { get; set; }
+        public string Author { get; set; }
+        public string Info { get; set; }
+        public string Publisher { get; set; }
     
         public virtual Category Category { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

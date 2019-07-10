@@ -100,6 +100,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\img\fransa.png" />
     <Content Include="Content\img\luxybox.png" />
+    <Content Include="Content\products\1.jpg" />
     <Content Include="Content\Site.css" />
     <Content Include="Data\LuxyboxDataModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -196,6 +197,8 @@
     <Content Include="Views\Products\Details.cshtml" />
     <Content Include="Views\Products\Edit.cshtml" />
     <Content Include="Views\Products\Index.cshtml" />
+    <Content Include="Views\Home\Details.cshtml" />
+    <Content Include="Views\Home\Products.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -47,6 +47,9 @@
           <Property Name="CategoryId" Type="int" Nullable="false" />
           <Property Name="Price" Type="decimal" Precision="15" Scale="2" />
           <Property Name="ImgUrl" Type="varchar" MaxLength="500" />
+          <Property Name="Author" Type="varchar" MaxLength="50" />
+          <Property Name="Info" Type="varchar" MaxLength="2000" />
+          <Property Name="Publisher" Type="varchar" MaxLength="50" />
         </EntityType>
         <Association Name="FK_Order_Member">
           <End Role="Member" Type="Self.Member" Multiplicity="1" />
@@ -143,6 +146,9 @@
           <NavigationProperty Name="OrderItems" Relationship="LuxbyBoxModel.FK_OrderItem_Product" FromRole="Product" ToRole="OrderItem" />
           <Property Name="Price" Type="Decimal" Precision="15" Scale="2" />
           <Property Name="ImgUrl" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="Author" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Info" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="Publisher" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <Association Name="FK_Product_Category">
           <End Role="Category" Type="Self.Category" Multiplicity="1" />
@@ -263,6 +269,9 @@
           <EntitySetMapping Name="Products">
             <EntityTypeMapping TypeName="LuxbyBoxModel.Product">
               <MappingFragment StoreEntitySet="Product">
+                <ScalarProperty Name="Publisher" ColumnName="Publisher" />
+                <ScalarProperty Name="Info" ColumnName="Info" />
+                <ScalarProperty Name="Author" ColumnName="Author" />
                 <ScalarProperty Name="ImgUrl" ColumnName="ImgUrl" />
                 <ScalarProperty Name="Price" ColumnName="Price" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
