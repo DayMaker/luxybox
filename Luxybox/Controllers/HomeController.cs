@@ -11,6 +11,12 @@ namespace Luxybox.Controllers
         // GET: Home
         public ActionResult Index()
         {
+
+
+
+
+
+
             //Helper.BusinessHelper.AddCategory(new Data.Category { Name = "Men" });
             var categories = dbContext.Categories.ToList();//Helper.BusinessHelper.GetCategories();
             var products = dbContext.Products.ToList();
@@ -18,13 +24,26 @@ namespace Luxybox.Controllers
 
             return View(model);
         }
-        public ActionResult Details(int? id)
+        public ActionResult Products(int id)
         {
-            if (id == null)
+            if (id == 0)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Product product = dbContext.Products.Find(id);
+            var products = dbContext.Products.Where(c => c.CategoryId == id).ToList();
+            if (products == null)
+            {
+                return HttpNotFound();
+            }
+            return View(products);
+        }
+        public ActionResult Details(int id)
+        {
+            if (id == 0)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Product product = dbContext.Products.SingleOrDefault(q => q.Id == id);
             if (product == null)
             {
                 return HttpNotFound();
