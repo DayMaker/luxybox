@@ -16,10 +16,8 @@
 
 <div class="categorys">
 
-
     @foreach (var category in Model.Categories)
     {
-
     <div class="category-row">
         <a href="@Url.Action("Products", "Home", new { id = category.Id })">
             <div>

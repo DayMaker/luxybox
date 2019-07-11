@@ -4,31 +4,27 @@
     ViewBag.Title = "Index";
 }
 <p>
-    
+
 </p>
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
 
-@{
-    <div>
-        @foreach (var product in Model)
-        {
-            <div class="products">
-                <div class="product-row">
-                    <a href="@Url.Action("Details", "Products", new { id = product.Id })">
 
-                        <img class="product-image" src="@product.ImgUrl" />
+@foreach (var product in Model)
+{
+    <div class="products">
+        <div class="product-row">
+            <a href="@Url.Action("Details", "Products", new { id = product.Id })">
 
-                        <p class="product-name">@product.Name</p>
-                        <p class="product-price" @product.Price></p>
-                        @Html.ActionLink("Edit", "Edit", new { id = product.Id }) |
-                        @Html.ActionLink("Delete", "Delete", new { id = product.Id })
+                <img class="product-image" src="@product.ImgUrl" />
 
-</div>
-            </div>
-
-        }
+                <p class="product-name">@product.Name</p>
+                <p class="product-price" @product.Price></p>
+                @Html.ActionLink("Edit", "Edit", new { id = product.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = product.Id })
+            </a>
+        </div>
     </div>
 }
 

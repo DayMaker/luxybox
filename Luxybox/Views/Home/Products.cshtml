@@ -2,26 +2,21 @@
 
 @{ ViewBag.Title = "Kitaplar";}
 
-<p>
-</p>
-
-
 
 @{
-    <div>
+    <div class="products">
+
         @foreach (var product in Model)
         {
-            <div class="products">
-                <div class="product-row">
-                    <a href="@Url.Action("Details", "Home", new { id = product.Id })">
-
+            <div class="product-row">
+                <a href="@Url.Action("Details", "Home", new { id = product.Id })">
+                    <div>
                         <img class="product-image" src="@product.ImgUrl" />
 
                         <p class="product-name">@product.Name</p>
                         <p class="product-price" @product.Price></p>
-
-
-                </div>
+                    </div>
+                </a>
             </div>
 
         }
