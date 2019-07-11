@@ -7,6 +7,7 @@
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
+    padding-top: 30px;
 }
 
 /* Set width on the form input elements since they're 100% wide by default */
@@ -24,7 +25,7 @@ textarea {
 .product-row {
     padding: 10px;
     margin-left: 10px;
-    border: 1px solid gray;
+    border: 1px solid red;
     border-radius: 10px;
     overflow: hidden;
     margin-bottom: 10px;
@@ -64,6 +65,17 @@ textarea {
     
     height:60px;
     width:100px;
+}
+.usericon{
+    color:red;
+    margin-left:900px;
+    height:30px;
+    width:20px;
+}
+.basketicon {
+    margin-left: 900px;
+    height: 30px;
+    width: 20px;
 }
 
 
