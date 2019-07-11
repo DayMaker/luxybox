@@ -1,14 +1,11 @@
 ﻿@model IEnumerable<Luxybox.Data.Product>
 
-@{
-    ViewBag.Title = "Index";
-}
+@{ ViewBag.Title = "Kitaplar";}
+
 <p>
-    
 </p>
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+
+
 
 @{
     <div>
@@ -22,10 +19,9 @@
 
                         <p class="product-name">@product.Name</p>
                         <p class="product-price" @product.Price></p>
-                        @Html.ActionLink("Edit", "Edit", new { id = product.Id }) |
-                        @Html.ActionLink("Delete", "Delete", new { id = product.Id })
 
-</div>
+
+                </div>
             </div>
 
         }

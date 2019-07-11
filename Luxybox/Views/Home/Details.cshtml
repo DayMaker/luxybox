@@ -10,54 +10,55 @@
 
 
 @*@{
-    <div>
+        <div>
 
-            <div class="products">
-                <div class="product-row">
-
-
-                    <img class="product-image" src="@Model.ImgUrl" />
-                                       
-                    <p class="product-name">@Model.Name</p>
-                    <p class="product-price" @Model.Price></p>
-                    <p class="product-info" @Model.Info></p>
-                    <p class="product-publisher" @Model.Publisher></p>
-                    <p class="product-author" @Model.Author></p>
+                <div class="products">
+                    <div class="product-row">
 
 
+                        <img class="product-image" src="@Model.ImgUrl" />
+
+                        <p class="product-name">@Model.Name</p>
+                        <p class="product-price" @Model.Price></p>
+                        <p class="product-info" @Model.Info></p>
+                        <p class="product-publisher" @Model.Publisher></p>
+                        <p class="product-author" @Model.Author></p>
+
+
+                    </div>
                 </div>
-            </div>
 
-        
-    </div>
-}*@
+
+        </div>
+    }*@
 <div>
     <h4>Details</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            <img class="product-image" src="@Model.ImgUrl" />
-            @*<p>@Html.DisplayNameFor(model => model.Name) </p>
-            <p> @Html.DisplayNameFor(model => model.Price)</p>
-              
-            <p>@Html.DisplayNameFor(model => model.Author)</p>
-            <p>@Html.DisplayNameFor(model => model.Publisher)</p>
-            @Html.DisplayNameFor(model => model.Info)*@
-                
-                
-                
+            <img class="detail-image" src="@Model.ImgUrl" width="300" height="300" />
+
+            @*  <p>@Html.DisplayNameFor(model => model.Name) </p>
+                <p>@Html.DisplayNameFor(model => model.Price)</p>
+                <p>@Html.DisplayNameFor(model => model.Author)</p>
+                <p>@Html.DisplayNameFor(model => model.Publisher)</p>
+                   @Html.DisplayNameFor(model => model.Info)*@
+
+
+
         </dt>
 
         <dd>
 
-            <p>@Html.DisplayFor(model => model.Name)</p>
-           <p> @Html.DisplayFor(model => model.Price)</p>
-           <p> @Html.DisplayFor(model => model.Author)</p>
-           <p> @Html.DisplayFor(model => model.Publisher)</p>
-           <p> @Html.DisplayFor(model => model.Info)
-</dd>
+            <p> @Html.DisplayFor(model => model.Name)</p>
+            <p> @Html.DisplayFor(model => model.Price)</p>
+            <p> @Html.DisplayFor(model => model.Author)</p>
+            <p> @Html.DisplayFor(model => model.Publisher)</p>
+            <p> @Html.DisplayFor(model => model.Info)
+        </dd>
 
     </dl>
 </div>
 
 <div class="clearfix"></div>
+@Html.ActionLink("Sepete Ekle", "Buy");
